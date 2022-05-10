@@ -7,22 +7,22 @@ const hbs = require('hbs');
 app.set('view engine', 'hbs');
 const port = process.env.PORT
 
-  // Handlebars
-app.get('/', function (req, res) {
-  res.render('home', {
-    titulo: "Prueba",
-    objeto : "De node"
-
-  })
-  })
-
-app.get('/generic', function (req, res) {
-  res.render('generic')
-})
-
-app.get('/elements', function (req, res) {
-  res.render('element')
-  })
+//  // Handlebars
+//app.get('/', function (req, res) {
+//  res.render('home', {
+//    titulo: "Prueba",
+//    objeto : "De node"
+//
+//  })
+//  })
+//
+//app.get('/generic', function (req, res) {
+//  res.render('generic')
+//})
+//
+//app.get('/elements', function (req, res) {
+//  res.render('element')
+//  })
 
 
 hbs.registerPartials(__dirname + '/views/partials', function (err) {});
@@ -39,7 +39,7 @@ app.get('/elements', function (req, res) {
   })
 
 app.get('*', function (req, res) {
-  res.sendFile( __dirname + '/public/template/error-404.html')
+  res.sendFile( __dirname + '/public/index.html')
 })
 
 app.listen(port, () => {
